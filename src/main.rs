@@ -1,12 +1,24 @@
-use yew::prelude::*;
+//! This is a simple single page application that renders a single component.
+//! This will be the home page for the website.
+//! Other info like CV/Blog etc will be registered on other subdomains.
 
-#[function_component(App)]
+pub mod pages;
+pub mod router;
+
+use yew::prelude::*;
+use yew_router::{BrowserRouter, Switch};
+
+use crate::router::{switch, Route};
+
+#[function_component(Main)]
 fn app() -> Html {
     html! {
-        <h1>{ "Hello Blog!" }</h1>
+        <BrowserRouter>
+            <Switch<Route> render={switch} /> // <- must be child of <BrowserRouter>
+        </BrowserRouter>
     }
 }
 
 fn main() {
-    yew::Renderer::<App>::new().render();
+    yew::Renderer::<Main>::new().render();
 }

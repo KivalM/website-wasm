@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* some additional fonts */
+
+@font-face {
+    font-family: "lupine";
+    src: url("/static/fonts/font.ttf") format("truetype");
+}
+
+.lupine {
+    font-family: "lupine";
+}
+
+
+
+.ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
