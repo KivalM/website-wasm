@@ -36,7 +36,7 @@ impl Component for IndexPage {
                         <div class=" bg-black bg-opacity-50 h-screen w-screen">
 
                 <div class="select-none">
-                if self.nav {
+                if !self.nav {
                 // Greeter
                 <div class="h-screen w-screen flex flex-col justify-center items-center lupine text-center" {onclick}>
                     <div class="hover:scale-150 transition-all duration-100 cursor-pointer tracking-tight p-12">
@@ -45,18 +45,26 @@ impl Component for IndexPage {
                         <h2 class="text-6xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
                             {"Kival Mahadew"}</h2>
                         <h3 class="text-xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
-                            {"click me"}</h3>
+                            {"click me !"}</h3>
                     </div>
                 </div>
 
                 } else{
                 // Nav bar
                 <div class="h-screen w-screen flex flex-col justify-center items-center lupine text-center text-6xl text-white gap-12">
-                    <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400"> {"Blog"} </span>
-                    <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400"> {"CV"} </span>
-                    <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400"> {"Projects"} </span>
-                    <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400"> {"Contact"} </span>
-                    <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400" {onclick}> {"Back"} </span>
+                  <a href="https://blog.kivalm.com" class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
+                    <span > {"Blog"} </span>
+                  </a>
+                  <a href="https://cv.kivalm.com" class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
+                    <span> {"CV"} </span>
+                  </a>
+                  <a href="https://projects.kivalm.com" class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
+                    <span> {"Projects"} </span>
+                  </a>
+                  <a href="https://contact.kivalm.com" class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
+                    <span> {"Contact"} </span>
+                  </a>
+                  <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400" {onclick}> {"Back"} </span>
                 </div>
                 }
                 </div>
@@ -66,9 +74,10 @@ impl Component for IndexPage {
 
             // footer
 
-            <div class="h-12 w-screen absolute bottom-0 text-gray-300 flex items-center justify-center">
-                <div class="flex flex-row justify-center items-center">
-                    {"Made in Rust with Wasm and Yew"}
+            <div class="h-12 w-screen absolute bottom-0 text-gray-300 flex items-center justify-center roboto">
+                <div class="flex flex-col justify-center items-center">
+                    {"Overengineered with Rust and Yew"}
+                    <div class="text-xs ">{"This website could have been 84% smaller"}</div>
                 </div>
             </div>
 
