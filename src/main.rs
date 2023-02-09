@@ -2,7 +2,6 @@
 //! This will be the home page for the website.
 //! Other info like CV/Blog etc will be registered on other subdomains.
 
-pub mod pages;
 pub mod router;
 
 use yew::prelude::*;
