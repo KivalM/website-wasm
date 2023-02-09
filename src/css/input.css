@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "lupine";
+    src: url("/static/fonts/font.ttf") format("truetype");
+}
+
+.lupine {
+    font-family: "lupine";
+}
