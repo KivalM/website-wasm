@@ -357,6 +357,7 @@ dependencies = [
 [[package]]
 name = "kml"
 version = "0.1.0"
+source = "git+https://github.com/KivalM/kml#d5bd301e086ee3ab6e11ef3138ffae954b7ee4b7"
 
 [[package]]
 name = "libc"
