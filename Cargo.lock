@@ -355,6 +355,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "kml"
+version = "0.1.0"
+
+[[package]]
 name = "libc"
 version = "0.2.139"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -767,6 +771,9 @@ dependencies = [
 name = "website"
 version = "0.1.0"
 dependencies = [
+ "kml",
+ "wasm-bindgen",
+ "web-sys",
  "yew",
  "yew-router",
 ]
