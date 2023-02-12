@@ -1,6 +1,6 @@
 use kml::KMLDocument;
 use wasm_bindgen::JsCast;
-use web_sys::{Document, EventTarget, HtmlInputElement, HtmlTextAreaElement};
+use web_sys::{Document, EventTarget, HtmlTextAreaElement};
 use yew::prelude::*;
 pub struct KMLEditor {
     kml_text: String,
@@ -73,7 +73,7 @@ impl Component for KMLEditor {
                 <div class="grid grid-flow-col grid-cols-4">
                     <div class="col-span-2 px-4 py-4 rounded-b-lg  h-[90vh] ">
                         <textarea id="editor" rows="8"
-                            class="block w-full text-sm h-full border-0 bg-gray-900 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                            class="block text-sm h-full w-full border-0 bg-gray-900 focus:ring-0 text-white overflow-x-scroll overflow-y-scroll whitespace-pre"
                             oninput={on_input_change}
                             value={kml_text}
                             >

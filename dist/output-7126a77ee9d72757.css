@@ -721,8 +721,28 @@ video {
   align-self: center;
 }
 
+.overflow-x-auto{
+  overflow-x: auto;
+}
+
+.overflow-y-auto{
+  overflow-y: auto;
+}
+
+.overflow-x-scroll{
+  overflow-x: scroll;
+}
+
+.overflow-y-scroll{
+  overflow-y: scroll;
+}
+
 .whitespace-nowrap{
   white-space: nowrap;
+}
+
+.whitespace-pre{
+  white-space: pre;
 }
 
 .rounded{
