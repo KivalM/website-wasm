@@ -41,11 +41,14 @@ impl Component for IndexPage {
                 <div class="h-screen w-screen flex flex-col justify-center items-center lupine text-center" {onclick}>
                     <div class="hover:scale-150 transition-all duration-100 cursor-pointer tracking-tight p-12">
                         <h1 class="text-4xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
-                            {"i am"}</h1>
+                            {"i am"}
+                        </h1>
                         <h2 class="text-6xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
-                            {"Kival Mahadew"}</h2>
+                            {"Kival Mahadew"}
+                        </h2>
                         <h3 class="text-xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
-                            {"click me !"}</h3>
+                            {"click me !"}
+                        </h3>
                     </div>
                 </div>
 
@@ -69,18 +72,7 @@ impl Component for IndexPage {
                 }
                 </div>
             </div>
-
             </div>
-
-            // footer
-
-            <div class="h-12 w-screen absolute bottom-0 text-gray-300 flex items-center justify-center roboto">
-                <div class="flex flex-col justify-center items-center">
-                    {"Overengineered with Rust and Yew"}
-                    <div class="text-xs ">{"This website could have been 84% smaller"}</div>
-                </div>
-            </div>
-
         </>
         }
     }
