@@ -6,6 +6,7 @@ pub fn home() -> Html {
         <>
             <div class="flex container mx-auto">
                 <span class="text-6xl"> {"Welcome 2 da blog"} </span>
+                <span class="text-xl "> {"This is a WIP"} </span>
             </div>
         </>
     }
