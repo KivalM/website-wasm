@@ -12,11 +12,11 @@ impl Component for IndexPage {
     type Message = Msg;
     type Properties = ();
 
-    fn create(ctx: &Context<Self>) -> Self {
+    fn create(_: &Context<Self>) -> Self {
         Self { nav: false }
     }
 
-    fn update(&mut self, ctx: &Context<Self>, msg: Self::Message) -> bool {
+    fn update(&mut self, _: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::OnClick => {
                 self.nav = !self.nav;
