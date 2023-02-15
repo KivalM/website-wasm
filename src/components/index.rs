@@ -1,80 +1,71 @@
-use yew::{function_component, html, use_state, Callback, Html};
-use yew_router::prelude::use_navigator;
-
-use crate::router::Route;
+use yew::{function_component, html, Html};
 
 #[function_component(IndexMainComponent)]
 pub fn index_main_component() -> Html {
-    // visibility toggle
-    let visible = use_state(|| true);
-    let onclick = {
-        let visible = visible.clone();
-        Callback::from(move |_| visible.set(!*visible))
-    };
-
-    let navigator = use_navigator().unwrap();
-    let navigate = move |route: Route| {
-        let navigator = navigator.clone();
-        Callback::from(move |_| navigator.push(&route))
-    };
-
     html! {
-        <>
-          // background image
-          <div class={"bg-[url('https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-4.0.3&dl=jack-b-rn-0OotfzFA-unsplash.jpg&w=2400&q=80&fm=jpg&crop=entropy&cs=tinysrgb')]
-              h-screen w-screen bg-cover bg-center "}>
-                          // dark overlay
-                          <div class=" bg-black bg-opacity-50 h-screen w-screen">
+    <>
+        <div class="h-screen w-screen bg-black p-2 sm:p-8 select-none ">
+            // inner box with w
+            <div class="h-full w-full border-2 border-gray-400 rounded">
 
-              <div class="select-none">
-                    // Greeter
-                  if *visible {
-
-                  <div class="h-screen w-screen flex flex-col justify-center items-center nueue-montreal-light text-center" {onclick}>
-                      <div class="hover:scale-150 transition-all duration-100 cursor-pointer tracking-tight p-12">
-                          <h1 class="text-4xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
-                              {"i am"}
-                          </h1>
-                          <h2 class="text-6xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
-                              {"Kival Mahadew"}
-                          </h2>
-                          <h3 class="text-xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
-                              {"click me !"}
-                          </h3>
-                      </div>
-                  </div>
-
-                  } else{
-                  // Nav bar
-                  <div
-                      class="h-screen w-screen flex flex-col justify-center items-center lupine text-center text-6xl text-white gap-12">
-                      <span onclick={navigate(Route::Blog)}
-                          class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
-                          <span> {"Blog"} </span>
-                      </span>
-
-                      <span onclick={navigate(Route::Projects)}
-                          class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
-                          <span> {"Projects"} </span>
-                      </span>
+                // background canvas that ignores other elements and is always behind everything
+                // <canvas id="canvas" class="absolute z-0 h-full w-full left-0 top-0 bg-white"></canvas>
 
 
-                      <span onclick={navigate(Route::Projects)}
-                          class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
-                          <span> {"Github"} </span>
-                      </span>
 
-                    <span onclick={navigate(Route::Projects)} class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
-                        <span> {"LinkedIn"} </span>
-                    </span>
 
-                      <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400"
-                          {onclick}> {"Back"} </span>
-                  </div>
-                  }
-              </div>
-          </div>
-          </div>
-      </>
+                // here we want 2 boxes for the right and left sides
+                <div class="grid grid-cols-2 grid-flow-row p-6 h-full z-1">
+                    // left box
+                    <div class="float-left text-white  nueue-montreal-regular col-span-1">
+                        <div class="text-4xl"> {"Kival Mahadew"} </div>
+                        <div class="text-3xl mt-2"> {"CS Student & Software Developer"} </div>
+
+                        <div class="text-xl mt-4 hover:text-violet-400 transition-all"> {"- Home"} </div>
+                        <div class="text-xl hover:text-violet-400 transition-all"> {"- Blog"} </div>
+                        <div class="text-xl hover:text-violet-400 transition-all"> {"- Projects"} </div>
+                        <div class="text-xl hover:text-violet-400 transition-all"> {"- Contact"} </div>
+
+                    </div>
+
+                    <div class="text-white text-xl nueue-montreal-regular col-span-1  flex flex-col justify-end">
+                        <div class="flex flex-row justify-end">
+
+                        <div class="flex flex-col justify-end">
+                            // github icon
+                            <div>
+                                <a class="inline-flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="bg-black text-white fill-current rounded-lg"><path d="M23 0l-4.5 16.5-6.097-5.43 5.852-6.175-7.844 5.421-5.411-1.316 18-9zm-11 12.501v5.499l2.193-3.323-2.193-2.176zm-8.698 6.825l-1.439-.507 5.701-5.215 1.436.396-5.698 5.326zm3.262 4.287l-1.323-.565 4.439-4.503 1.32.455-4.436 4.613zm-4.083.387l-1.481-.507 8-7.89 1.437.397-7.956 8z"/></svg>
+                                   <span class="hover:text-violet-400 transition-all"> {"Email"}  </span>
+                                </a>
+                            </div>
+
+                            <div>
+                                <a class="inline-flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="bg-black text-white fill-current rounded-lg">
+
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                <span class="hover:text-violet-400 transition-all">    {"LinkedIn"} </span>
+                                </a>
+                            </div>
+
+                            <div>
+                                <a class="inline-flex gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        class="bg-black text-white fill-current rounded-lg">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
+                                    <span class="hover:text-violet-400 transition-all">  {"Github"} </span>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </>
     }
 }
