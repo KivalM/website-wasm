@@ -30,7 +30,7 @@ pub fn index_main_component() -> Html {
                     // Greeter
                   if *visible {
 
-                  <div class="h-screen w-screen flex flex-col justify-center items-center lupine text-center" {onclick}>
+                  <div class="h-screen w-screen flex flex-col justify-center items-center nueue-montreal-light text-center" {onclick}>
                       <div class="hover:scale-150 transition-all duration-100 cursor-pointer tracking-tight p-12">
                           <h1 class="text-4xl text-white font-bold hover:tracking-[0.25em] transition-all duration-100">
                               {"i am"}
@@ -52,18 +52,22 @@ pub fn index_main_component() -> Html {
                           class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
                           <span> {"Blog"} </span>
                       </span>
-                      <span onclick={navigate(Route::CV)}
-                          class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
-                          <span> {"CV"} </span>
-                      </span>
+
                       <span onclick={navigate(Route::Projects)}
                           class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
                           <span> {"Projects"} </span>
                       </span>
-                      <span onclick={navigate(Route::Contact)}
+
+
+                      <span onclick={navigate(Route::Projects)}
                           class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
-                          <span> {"Contact"} </span>
+                          <span> {"Github"} </span>
                       </span>
+
+                    <span onclick={navigate(Route::Projects)} class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400">
+                        <span> {"LinkedIn"} </span>
+                    </span>
+
                       <span class="hover:scale-125 transition-all duration-100 cursor-pointer hover:text-red-400"
                           {onclick}> {"Back"} </span>
                   </div>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -11,10 +13,36 @@
     src: url("/static/fonts/font.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "nueue-montreal-regular";
+    src: url("/static/fonts/NeueMontreal-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "nueue-montreal-bold";
+    src: url("/static/fonts/NeueMontreal-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "nueue-montreal-light";
+    src: url("/static/fonts/NeueMontreal-Light.otf") format("opentype");
+}
+
 .lupine {
     font-family: "lupine";
 }
 
+.nueue-montreal {
+    font-family: "nueue-montreal";
+}
+
+.nueue-montreal-regular {
+    font-family: "nueue-montreal-regular";
+}
+
+.nueue-montreal-bold {
+    font-family: "nueue-montreal-bold";
+}
 
 
 .ubuntu {
@@ -23,4 +51,8 @@
 
 .roboto {
     font-family: 'Roboto', sans-serif;
+}
+
+.heebo {
+    font-family: 'Heebo', sans-serif;
 }
