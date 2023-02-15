@@ -6,6 +6,8 @@ use yew::prelude::*;
 pub struct ParticleAnimation {
     canvas: Option<HtmlCanvasElement>,
     generator: ParticleGenerator,
+    width: u32,
+    height: u32,
 }
 
 pub enum Msg {
@@ -18,15 +20,25 @@ impl Component for ParticleAnimation {
     type Properties = ();
 
     fn create(_: &Context<Self>) -> Self {
+        let document = web_sys::window().unwrap().document().unwrap();
+        let main_box = document.get_element_by_id("main-box").unwrap();
+
+        let height = main_box.client_height();
+        let width = main_box.client_width();
+
         Self {
             canvas: None,
             generator: ParticleGenerator::new(),
+            width: width.try_into().unwrap(),
+            height: height.try_into().unwrap(),
         }
     }
 
     fn view(&self, _: &Context<Self>) -> Html {
+        let width = self.width.to_string();
+        let height = self.height.to_string();
         html! {
-            <canvas id="canvas" class="h-full w-full">
+            <canvas id="canvas" width={width} height={height}  >
                 {"Your browser does not support the HTML5 canvas tag."}
             </canvas>
         }
@@ -57,7 +69,7 @@ impl Component for ParticleAnimation {
 
                 context.clear_rect(0.0, 0.0, width as f64, height as f64);
 
-                self.generator.generate(101, width, height);
+                self.generator.generate(500, width, height);
                 let particles = self.generator.render();
 
                 for (x, y) in particles {
@@ -93,12 +105,10 @@ impl ParticleGenerator {
         // generate n particles
         // in the shape of a circle
         for _ in 0..n {
-            // use polar coordinates to generate points across a circle
-            // let r = Math::random() * 100.0;
-            // let theta = Math::random() * 2.0 * std::f64::consts::PI;
-            // let x = (r * theta.cos()) as u32;
-            // let y = (r * theta.sin()) as u32;
-            // self.particles.push((x + width / 2, y + height / 2));
+            // draw random dots
+            let x = Math::random() * width as f64;
+            let y = Math::random() * height as f64;
+            self.particles.push((x as u32, y as u32));
         }
     }
 
