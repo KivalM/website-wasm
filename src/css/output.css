@@ -515,20 +515,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.absolute{
-  position: absolute;
+.visible{
+  visibility: visible;
 }
 
-.bottom-0{
-  bottom: 0px;
+.\!visible{
+  visibility: visible !important;
 }
 
 .flex{
   display: flex;
-}
-
-.h-12{
-  height: 3rem;
 }
 
 .h-screen{
@@ -617,24 +613,14 @@ video {
   letter-spacing: -0.025em;
 }
 
-.text-gray-500{
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-gray-400{
+.text-black{
   --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.text-gray-300{
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .transition-all{
