@@ -1,21 +1,23 @@
+use crate::components::other::particle_animation::ParticleAnimation;
 use yew::{function_component, html, Html};
 
 #[function_component(IndexMainComponent)]
 pub fn index_main_component() -> Html {
     html! {
     <>
-        <div class="h-screen w-screen bg-black p-2 sm:p-8 select-none ">
+        <div class="h-screen w-screen bg-black p-2 sm:p-8 select-none">
             // inner box with w
             <div class="h-full w-full border-2 border-gray-400 rounded">
 
-                // background canvas that ignores other elements and is always behind everything
-                // <canvas id="canvas" class="absolute z-0 h-full w-full left-0 top-0 bg-white"></canvas>
-
+                // box with background canvas that ignores other elements and is always behind everything
+                <div class="absolute z-[0] h-[95vh] overflow-hidden w-[95vw]">
+                    <ParticleAnimation/>
+                </div>
 
 
 
                 // here we want 2 boxes for the right and left sides
-                <div class="grid grid-cols-2 grid-flow-row p-6 h-full z-1">
+                <div class="grid grid-cols-2 grid-flow-row p-6 h-full z-[1] relative">
                     // left box
                     <div class="float-left text-white  nueue-montreal-regular col-span-1">
                         <div class="text-4xl"> {"Kival Mahadew"} </div>

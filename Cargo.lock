@@ -782,8 +782,11 @@ dependencies = [
 name = "website"
 version = "0.1.0"
 dependencies = [
+ "gloo-timers",
  "js-sys",
  "rand",
+ "wasm-bindgen",
+ "web-sys",
  "yew",
  "yew-router",
 ]
