@@ -1,21 +1,34 @@
 use crate::components::other::particle_animation::ParticleAnimation;
-use yew::{function_component, html, Html};
+use yew::{function_component, html, Callback, Html};
+
+// mutable global variable to store the mouse position
+pub static mut MOUSE_POS: (i32, i32) = (0, 0);
 
 #[function_component(IndexMainComponent)]
 pub fn index_main_component() -> Html {
+    // add a mouse move callback to update the mouse position
+    let mouse_move_callback = Callback::from(move |event: web_sys::MouseEvent| {
+        let x = event.client_x();
+        let y = event.client_y();
+
+        unsafe {
+            MOUSE_POS = (x, y);
+        }
+    });
+
     html! {
     <>
         <div class="h-screen w-screen bg-black p-2 sm:p-8 select-none">
             // inner box with w
-            <div class="h-full w-full border-2 border-gray-400 rounded" id="main-box">
+            <div class="h-full w-full border-2 border-gray-400 rounded" id="main-box" onmousemove={mouse_move_callback} >
 
                 // box with background canvas that ignores other elements and is always behind everything
-                <div class="absolute z-[0] h-[95vh] overflow-hidden w-[95vw]">
-                    <ParticleAnimation />
+                <div class="absolute z-[0] overflow-hidden">
+                    <ParticleAnimation  />
                 </div>
 
                 // here we want 2 boxes for the right and left sides
-                <div class="grid grid-cols-2 grid-flow-row p-6 h-full z-[1] relative">
+                <div class="grid grid-cols-2 grid-flow-row p-6 h-full z-[1] relative" >
                     // left box
                     <div class="float-left text-white  nueue-montreal-regular col-span-1">
                         <div class="text-4xl hover:underline"> {"Kival Mahadew"} </div>
