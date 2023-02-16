@@ -23,7 +23,10 @@ features = [
   'Window',
   "MouseEvent",
   "EventTarget",
-  "HtmlDivElement" 
+  "HtmlDivElement",
+  "TouchEvent",
+  "TouchList",
+  "Touch"
 ]
 
 

@@ -16,11 +16,27 @@ pub fn index_main_component() -> Html {
         }
     });
 
+    let touch_move_callback = Callback::from(move |event: web_sys::TouchEvent| {
+        let touches = event.touches();
+        let touch = touches.get(0).unwrap();
+        let x = touch.client_x();
+        let y = touch.client_y();
+
+        unsafe {
+            MOUSE_POS = (x, y);
+        }
+    });
+
     html! {
     <>
         <div class="h-screen w-screen bg-black p-2 sm:p-8 select-none">
             // inner box with w
-            <div class="h-full w-full border-2 border-gray-400 rounded" id="main-box" onmousemove={mouse_move_callback} >
+            <div class="h-full w-full border-2 border-gray-400 rounded" id="main-box"
+            // mouse move callback for desktop
+            onmousemove={mouse_move_callback}
+            // touch drag callback for mobile
+            ontouchmove={touch_move_callback}
+            >
 
                 // box with background canvas that ignores other elements and is always behind everything
                 <div class="absolute z-[0] overflow-hidden">
