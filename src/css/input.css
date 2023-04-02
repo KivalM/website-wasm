@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,54 +7,53 @@
 
 /* some additional fonts */
 
-@font-face {
-    font-family: "lupine";
-    src: url("/static/fonts/font.ttf") format("truetype");
+
+
+html {
+    background-color: #222831;
+    font-family: 'Roboto';
+
 }
 
-@font-face {
-    font-family: "nueue-montreal-regular";
-    src: url("/static/fonts/NeueMontreal-Regular.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "nueue-montreal-bold";
-    src: url("/static/fonts/NeueMontreal-Bold.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "nueue-montreal-light";
-    src: url("/static/fonts/NeueMontreal-Light.otf") format("opentype");
-}
-
-.lupine {
-    font-family: "lupine";
-}
-
-.nueue-montreal {
-    font-family: "nueue-montreal";
-}
-
-.nueue-montreal-regular {
-    font-family: "nueue-montreal-regular";
-}
-
-.nueue-montreal-bold {
-    font-family: "nueue-montreal-bold";
-}
-
-.nueue-montreal-light {
-    font-family: "nueue-montreal-light";
-}
-
-.ubuntu {
-    font-family: 'Ubuntu', sans-serif;
+body {
+    color: #eeeeee;
 }
 
 .roboto {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', serif;
 }
 
-.heebo {
-    font-family: 'Heebo', sans-serif;
+.comfortaa {
+    font-family: 'Comfortaa', cursive;
+}
+
+@keyframes slide {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.animate-slide {
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.animate-linear {
+    animation-timing-function: linear;
+}
+
+header {
+    background-image: url("https://images.unsplash.com/photo-1488866022504-f2584929ca5f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=nathan-anderson-L95xDkSSuWw-unsplash.jpg&w=2400");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    width: 100vw;
 }
