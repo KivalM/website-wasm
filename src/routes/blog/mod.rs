@@ -5,7 +5,7 @@ use yew::{function_component, html, Html};
 pub fn blog_page() -> Html {
     html! {
         <>
-            <Navbar title="the blog."/>
+            <Navbar title="Blog"/>
             <CTA />
         </>
     }

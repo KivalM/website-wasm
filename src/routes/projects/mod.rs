@@ -7,7 +7,6 @@ pub fn projects_page() -> Html {
     html! {
         html! {
             <>
-                <Navbar title="Projects"/>
 
             </>
         }

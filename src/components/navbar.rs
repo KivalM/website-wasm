@@ -1,4 +1,7 @@
 use yew::{function_component, html, Html, Properties};
+use yew_router::prelude::Link;
+
+use crate::router::Route;
 
 #[derive(Clone, PartialEq, Properties)]
 pub struct NavbarProps {
@@ -8,21 +11,17 @@ pub struct NavbarProps {
 #[function_component(Navbar)]
 pub fn navbar(props: &NavbarProps) -> Html {
     html! {
-        <nav class="container mx-auto bg-white h-20">
-            <div class=" flex items-center h-full">
-                // The page title is passed in as a prop
-                <span class="text-6xl text-orange-600 ubuntu font-bold">
-                    {&props.title}
+        <nav class="px-2 sm:px-4 py-2.5 shadow-xl bg-blue-200/50 comfortaa">
+        <div class="flex flex-wrap items-center justify-between px-2 gap-4">
+            <Link<Route> to={Route::Home}>
+                <span
+                    class="text-xl font-semibold font-logo text-blue-700 select-none"
+                >
+                    {&props.title }
                 </span>
+            </Link<Route>>
+        </div>
+    </nav>
 
-                // other navbar items
-                <div class="flex-grow h-full">
-
-                </div>
-            </div>
-
-            // Separator
-            <div class="h-1 bg-orange-600 rounded-full"></div>
-        </nav>
     }
 }
