@@ -1,7 +1,7 @@
 use yew::{html, Html};
 use yew_router::Routable;
 
-use crate::routes::{blog::BlogPage, index::IndexPage, projects::ProjectsPage};
+use crate::routes::{blog::BlogPage, cv::CVPage, index::IndexPage, projects::ProjectsPage};
 
 #[derive(Clone, Routable, PartialEq)]
 pub enum Route {
@@ -9,9 +9,10 @@ pub enum Route {
     Home,
     #[at("/blog")]
     Blog,
-
     #[at("/projects")]
     Projects,
+    #[at("/cv")]
+    CV,
 
     #[not_found]
     #[at("/404")]
@@ -29,6 +30,9 @@ pub fn switch(routes: Route) -> Html {
 
         Route::Projects => html! {
             <ProjectsPage/>
+        },
+        Route::CV => html! {
+            <CVPage/>
         },
 
         Route::NotFound => {
