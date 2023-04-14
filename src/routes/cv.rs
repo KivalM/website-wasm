@@ -97,10 +97,18 @@ pub fn cv() -> Html {
                             </div>
                             <h4 class="text-xs text-gray-500 font-bold">{"May 2022 - April 2023"}</h4>
                             <p class="text-sm mt-2 pl-1">
-                                {"My primary responsibility was the design and development of serverless business intelligence
-                                software that would run in the browser via WebAssembly. "}
-                                {"I also designed and built GraphQL APIs using Rust and PostgreSQL for analytics as well as some
-                                work with SvelteKit and TypeScript."}
+                                {"My primary responsibility was the design and development of software for the QuickAI platform. This includes: "}
+                                <ul class="list-disc ml-5">
+                                    <li>{"Building serverless Business Intelligence tools with WebAssembly"}</li>
+                                    <li>{"Data Visualisation with Plotly.js"}</li>
+                                    <li>{"Building GraphQL servers for handling high-frequency click analytics for
+                                    integration with Apache SuperSet."}</li>
+                                    <li>{"Open-source project contributions"}</li>
+                                    <li>{"Front-end development with SvelteKit and TypeScript"}</li>
+                                    <li>{"Integration with AWS services like Cognito and RDS"}</li>
+                                    <li>{"PostgreSQL Database management."}</li>
+                                    <li>{"Unit and integration testing"}</li>
+                                </ul>
                             </p>
                         </div>
 
