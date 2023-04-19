@@ -121,7 +121,7 @@ pub fn cv() -> Html {
                             <h4 class="text-xs text-gray-500 font-bold">{"April 2021 - Feb 2022"}</h4>
                             <p class="text-sm mt-2 ml-1">
                                 {"I tutored students in competitive programming with C++ in preparation for the South
-                                African Informatics Olympiad."}
+                                African Programming Olympiad."}
                             </p>
                         </div>
                     </div>

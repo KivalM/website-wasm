@@ -14,10 +14,9 @@ pub fn projects_page() -> Html {
                 {"Projects"}
             </div>
 
-        {PROJECTS.iter().map(|f| f.to_html()).collect::<Html>()}
-
-
-
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {PROJECTS.iter().map(|f| f.to_html()).collect::<Html>()}
+            </div>
         </div>
 
 
