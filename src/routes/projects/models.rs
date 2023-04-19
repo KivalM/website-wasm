@@ -80,7 +80,7 @@ pub const PROJECTS: [Project; 3] = [
     },
     Project {
         name: "SML",
-        description: "A simple(wip) markup language written in rust, focused on simplicity",
+        description: "(wip) A simple markup language written in rust, focused on simplicity",
         source_code: Some("https://github.com/KivalM/kml"),
         link: None,
         image_url: None,
