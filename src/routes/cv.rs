@@ -8,7 +8,7 @@ pub fn cv() -> Html {
     html! {
 
             <>
-                <Navbar title="CV" />
+                <Navbar />
                 <div class="px-10 mt-10 pb-3 poppins text-3xl font-semibold text-slate-900">
                     <h1>
                         <span class="text-blue-700">{"Kival Mahadew"}</span>

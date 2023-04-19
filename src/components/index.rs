@@ -11,7 +11,7 @@ pub fn index_main_component() -> Html {
             <div class="bg-black/60 bg-tras h-full w-full flex justify-center">
                 <div class="flex h-full justify-center text-center flex-col w-fit text-white">
                     <h1
-                        class="text-6xl comfortaa font-bold hover:scale-110 transition-all duration-100 bg-clip-text text-transparent bg-gradient-to-t from-blue-400 to-blue-600">
+                        class="text-6xl comfortaa font-bold hover:scale-110 transition-all duration-100 bg-clip-text text-transparent bg-gradient-to-t from-emerald-400 to-emerald-600">
                         {"Kival Mahadew"}
                     </h1>
                     <h2
@@ -38,12 +38,11 @@ pub fn index_main_component() -> Html {
                             </svg>
                         </a>
 
-                        <Link<Route> to={Route::CV} classes="mx-2 hover:scale-125 transition-all duration-75">
+                        <Link<Route> to={Route::Projects} classes="mx-2 hover:scale-125 transition-all duration-75">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-file-person" viewBox="0 0 16 16">
+                                class="bi bi-archive" viewBox="0 0 16 16">
                                 <path
-                                    d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
-                                <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
                             </svg>
                         </Link<Route>>
 
