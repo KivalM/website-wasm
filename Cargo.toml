@@ -25,6 +25,8 @@ features = [
   "EventTarget",
   "HtmlDivElement",
   "TouchEvent",
+  "DomTokenList",
+
   "TouchList",
   "Touch"
 ]
